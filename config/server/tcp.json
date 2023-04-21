@@ -43,7 +43,7 @@
 			"tag": "direct"
 		},
 		{
-			"tag": "chatGPT_proxy",
+			"tag": "chatgpt_proxy",
 			"protocol": "socks",
 			"settings": {
 				"servers": [{
