@@ -6,8 +6,6 @@
 
 apt-get update -y && apt-get install curl -y
 
-
-
 bash <(curl -s -L https://raw.githubusercontent.com/sixpence111/v2ray/master/install.sh)
 
 -------------------------------------------------------
