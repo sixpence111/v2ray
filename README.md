@@ -8,7 +8,7 @@ apt-get update -y && apt-get install curl -y
 
 
 
-bash <(curl -s -L https://github.com/sixpence111/v2ray/blob/master/install.sh)
+bash <(curl -s -L [https://github.com/sixpence111/v2ray/blob/master/install.sh](https://raw.githubusercontent.com/sixpence111/v2ray/master/install.sh))
 
 -------------------------------------------------------
 
