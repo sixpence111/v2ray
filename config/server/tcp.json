@@ -4,28 +4,38 @@
 		"error": "/var/log/v2ray/error.log",
 		"loglevel": "warning"
 	},
-	"inbounds": [{
-		"port": 2333,
-		"protocol": "vmess",
-		"settings": {
-			"clients": [{
-				"id": "e55c8d17-2cf3-b21a-bcf1-eeacb011ed79",
-				"level": 1,
-				"alterId": 233
-			}]
-		},
-		"streamSettings": {
-			"network": "tcp"
-		},
-		"sniffing": {
-			"enabled": true,
-			"destOverride": [
-				"http",
-				"tls"
-			]
+	"inbounds": [
+		{
+			"port": 2333,
+			"protocol": "vmess",
+			"settings": {
+				"clients": [
+					{
+						"id": "e55c8d17-2cf3-b21a-bcf1-eeacb011ed79",
+						"level": 1,
+						"alterId": 233
+					}
+				]
+			},
+			"streamSettings": {
+				"network": "tcp"
+			},
+			"sniffing": {
+				"enabled": true,
+				"destOverride": [
+					"http",
+					"tls"
+				]
+			}
 		}
-	}],
-	"outbounds": [{
+		//include_ss
+		//include_socks
+		//include_mtproto
+		//include_in_config
+		//
+	],
+	"outbounds": [
+		{
 			"protocol": "freedom",
 			"settings": {
 				"domainStrategy": "UseIP"
@@ -46,7 +56,9 @@
 			"protocol": "blackhole",
 			"settings": {},
 			"tag": "blocked"
-		}
+        }
+		//include_out_config
+		//
 	],
 	"dns": {
 		"servers": [
@@ -57,15 +69,15 @@
 		]
 	},
 	"routing": {
-		"domainStrategy": "IPOnDemand",
-		"rules": [{
-				"type": "field",
-				"ip": [
-					"geoip:private"
-				],
-				"outboundTag": "blocked"
-			},
-			{
+		"domainStrategy": "IPOnDemand",	
+		"rules": [
+            {
+                "type": "field",
+                "ip": [
+                    "geoip:private"
+                ],
+                "outboundTag": "blocked"
+            },{
 				"type": "field",
 				"outboundTag": "chatgpt_proxy",
 				"domain": [
@@ -73,13 +85,18 @@
 				],
 				"enabled": true
 			}
+			//include_ban_xx
+			//include_ban_bt
+			//include_ban_ad
+			//include_rules
+			//
 		]
 	},
 	"transport": {
 		"kcpSettings": {
-			"uplinkCapacity": 100,
-			"downlinkCapacity": 100,
-			"congestion": true
-		}
+            "uplinkCapacity": 100,
+            "downlinkCapacity": 100,
+            "congestion": true
+        }
 	}
 }
